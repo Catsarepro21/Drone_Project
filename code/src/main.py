@@ -2,6 +2,7 @@ import sys
 import cv2
 from vision import VisionTracker
 from mavlink_control import DroneController
+import numpy as np
 
 SIMULATION_MODE = True 
 
