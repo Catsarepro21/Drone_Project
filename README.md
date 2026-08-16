@@ -22,6 +22,7 @@ This guide covers setting up, configuring, and running an autonomous multirotor 
 
 
 ## Note: May require an NVIDIA GPU with driver 560.94 for legacy support
+## Note: Right Now this is for the default IRIS drone, will be updated when custom drone CAD is complete.
 
 ### Install and Configure WSL2
 Open PowerShell as Administrator and install Ubuntu 22.04:
