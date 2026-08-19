@@ -140,7 +140,7 @@ param set FRAME_TYPE 1
 ```
 
 ### Arming and Autonomous Takeoff
-Wait until the MAVProxy console shows `pre-arm good` and `GPS: OK`, then run:
+Wait until the MAVProxy console shows `pre-arm good` and `GPS: OK`(Might take a while), then run:
 ```text
 mode GUIDED
 arm throttle
