@@ -1,9 +1,26 @@
 
 # Autonomous + FPV Drone project! 
 
-A drone that works both autonomously via cameras routing through a Rasberry Pi for object detection, and can be controlled via a controller.
+A dual-mode quadcopter engineered to bridge manual FPV piloting with companion controlled autonomous movement. The drone switches between raw pilot input and onboard computer-vision navigation, allowing an autonomous tracking loop to guide flight trajectories while preserving manual pilot override.
+
+## System Architecture
+
+The drone operates on a dual-layer architecture separating real-time flight dynamics from high-level perception and path planning:
+
+* **Flight Controller (ArduPilot):** Handles motor mixing, sensor fusion (IMU, barometer, GPS), stabilization, and failsafe routines. Runs low-level PID loops to execute position and velocity targets.
+* **Companion Computer (Raspberry Pi):** Interfaces with an onboard camera feed to run lightweight YOLO object detection models in real time. It calculates target bounding-box offsets, translates pixel errors into velocity vectors, and streams `SET_POSITION_TARGET_LOCAL_NED` commands via MAVLink over UART.
+* **FPV & Manual Override:** Uses an analog/digital video transmission system for direct pilot viewing and a 2.4GHz/900MHz RC receiver link that can interrupt autonomous mode (`GUIDED`) and revert to manual control (`STABILIZE` / `ACRO` / `POSHOLD`) instantly.
 
 
+## Hardware Stack
+
+| Subsystem | Component / Specification |
+| :--- | :--- |
+| **Airframe** | Custom lightweight carbon fiber quadcopter frame |
+| **Compute Engine** | Raspberry Pi (Vision processing & high-level mission logic) |
+| **Flight Control** | ArduPilot-compatible flight controller |
+| **Sensors** | Onboard CSI/USB Camera, IMU, Barometer, GPS/Compass module |
+| **Communication** | Serial/UART MAVLink bridge (Pi to FCU), RC receiver, FPV VTX |
 
 # Authors
 
