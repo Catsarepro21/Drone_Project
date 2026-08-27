@@ -1,7 +1,8 @@
 
 # Autonomous + FPV Drone project! 
 
-A dual-mode quadcopter engineered to bridge manual FPV piloting with companion controlled autonomous movement. The drone switches between raw pilot input and onboard computer-vision navigation, allowing an autonomous tracking loop to guide flight trajectories while preserving manual pilot override.
+A dual-mode quadcopter engineered to bridge manual FPV piloting with companion controlled autonomous movement. The drone switches between raw pilot input and onboard computer-vision navigation, allowing an autonomous tracking loop to guide flight trajectories while preserving manual pilot override. View detailed BOM and Weight 
+[here](https://docs.google.com/spreadsheets/d/1xU_NW1MB9JgXXCRr1vzQk_ZqJNn86JdCjggnNsJFE8U/edit?usp=sharing).
 
 ## System Architecture
 
