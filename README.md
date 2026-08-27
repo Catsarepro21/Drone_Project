@@ -16,11 +16,11 @@ The drone operates on a dual-layer architecture separating real-time flight dyna
 
 | Subsystem | Component / Specification |
 | :--- | :--- |
-| **Airframe** | Custom lightweight carbon fiber quadcopter frame |
+| **Airframe** |Carbon fiber quadcopter frame |
 | **Compute Engine** | Raspberry Pi (Vision processing & high-level mission logic) |
-| **Flight Control** | ArduPilot-compatible flight controller |
+| **Flight Control** |CubePilot Orange|
 | **Sensors** | Onboard CSI/USB Camera, IMU, Barometer, GPS/Compass module |
-| **Communication** | Serial/UART MAVLink bridge (Pi to FCU), RC receiver, FPV VTX |
+| **Communication** | Serial/UART MAVLink bridge (Pi to FCU), RC receiver, FPV VTX, Herelink Air 1.1 |
 
 # Authors
 
