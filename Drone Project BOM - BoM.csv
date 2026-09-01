@@ -1,6 +1,6 @@
 Quantity,Component Category,Item Name / Model,Est. Price (USD),Purchase Link,Notes,Buy,Have
 1,Flight Controller,CubePilot Cube Orange+,$279.00,https://www.getfpv.com/cubepilot-the-cube-orange.html,Primary flight controller & autopilot,True,False
-1,Flight Controller(Alternate),CubePilot Cube Orange+,$235.00,http://ebay.com/used,,True,False
+1,Flight Controller(Alternate),CubePilot Cube Orange+,$235.00,http://ebay.com/used(Easy to find on Ebay),,True,False
 1,Companion Computer,Raspberry Pi 5 - 8gb,$175.00,https://www.canakit.com/raspberry-pi-5-8gb.html,High-level vision processing & MAVLink control,False,True
 1,Pi Front Camera Module,Sony IMX708,$34.95,https://www.canakit.com/raspberry-pi-camera-module-3.html?cid=cad&src=raspberrypi,Low-latency FPV / target tracking camera,True,False
 1,Pi Down Camera Module,Arducam 5MP OV5647,$28.99,https://www.arducam.com/arducam-ultra-wide-angle-fisheye-5mp-ov5647-camera-for-raspberry-pi.html,220HFOV for Downward Facing Cam Detection,True,False
