@@ -3,6 +3,7 @@
 Building a carbon-fiber quad that does both: manual FPV flights and autonomous target following. We have a Pi 5 running onboard YOLO to track targets, and it sends position targets to a Cube Orange running ArduPilot. We also added the ability to control manually via FPV
 
 BOM & weight calculations live here: https://docs.google.com/spreadsheets/d/1xU_NW1MB9JgXXCRr1vzQk_ZqJNn86JdCjggnNsJFE8U/edit?usp=sharing
+Wiring Diagram: https://app.cirkitdesigner.com/project/11a8d37d-fc97-4505-8930-f4c5d81e814d
 
 ### What does what
 
