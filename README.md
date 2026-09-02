@@ -31,7 +31,7 @@ We had to split the battery rails completely because the motors will brown out t
 
 ### Simulation
 
-Running flight dynamics and vision tests inside NVIDIA Isaac Sim via Pegasus. Setup notes here: https://pegasussimulator.github.io/PegasusSimulator/source/setup/installation.html (run this natively on Linux; WSL/Windows frame rates tank hard).
+Running flight dynamics and vision tests inside NVIDIA Isaac Sim via Pegasus. Setup notes here: https://pegasussimulator.github.io/PegasusSimulator/source/setup/installation.html (Not well on windows).
 
 ### Authors
 - Rehan (https://stardance.hackclub.com/@rehanhabbu)
