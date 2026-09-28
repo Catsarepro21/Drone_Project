@@ -9,18 +9,13 @@ A hybrid carbon-fiber drone combining manual FPV controls with Raspberry Pi 5 on
 
 * **Wiring Diagram:** [Cirkit Designer View](https://app.cirkitdesigner.com/project/11a8d37d-fc97-4505-8930-f4c5d81e814d)
 * **BOM & Weight Calc:** [Google Sheet Breakdown](https://docs.google.com/spreadsheets/d/1xU_NW1MB9JgXXCRr1vzQk_ZqJNn86JdCjggnNsJFE8U/edit?usp=sharing)
-
 ## Quick Start
 
-1. Flash ArduPilot (Copter) onto the Cube Orange+ and calibrate the IMU/compass.
-2. Boot the Raspberry Pi 5 and clone the onboard vision repository:
+1. **Flash Flight Controller:** Upload ArduPilot (Copter firmware) onto the Cube Orange+ and calibrate IMU/compass.
+2. **Setup Companion Computer:** Clone this repository onto the onboard Raspberry Pi 5 (8GB):
    ```bash
-   git clone https://github.com/your-username/drone-vision.git && cd drone-vision
-   ```
-3. Connect the Pi 5 to TELEM2 and run the autonomous tracking script:
-   ```bash
-   python3 main.py --port /dev/ttyAMA0 --baud 921600
-   ```
+   git clone [https://github.com/Catsarepro21/Drone_Project.git](https://github.com/Catsarepro21/Drone_Project.git)
+   cd Drone_Project
 
 ## Features
 
