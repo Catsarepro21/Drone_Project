@@ -2,7 +2,7 @@
 
 A hybrid carbon-fiber drone combining manual FPV controls with Raspberry Pi 5 onboard YOLO tracking and ArduPilot target following.
 
-![Autonomous Vision + FPV Quad](https://app.cirkitdesigner.com/project/11a8d37d-fc97-4505-8930-f4c5d81e814d)
+![Autonomous Vision + FPV Quad Schematic]([https://app.cirkitdesigner.com/project/11a8d37d-fc97-4505-8930-f4c5d81e814d](https://app.cirkitdesigner.com/project/11a8d37d-fc97-4505-8930-f4c5d81e814d))
 
 ## Try It
 
