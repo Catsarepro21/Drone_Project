@@ -41,6 +41,8 @@ Has both a FPV and an Autonomous mode powered by different controllers. To solve
 ## Authors & Acknowledgements
 
 * **Authors:** [Rehan](https://stardance.hackclub.com/@rehanhabbu), [Sahlameer](https://stardance.hackclub.com/@Sahlameer), [Faahim](https://stardance.hackclub.com/@Faahim)
+* **Open Source Tools:** [ArduPilot](https://ardupilot.org/), [Pegasus Simulator](https://pegasussimulator.github.io/PegasusSimulator/)
+
 
 BOM:
 | Quantity | Component Category | Item Name / Model | Est. Price (USD) | Purchase Link | Notes | Buy | Have |
@@ -74,4 +76,3 @@ BOM:
 | 1 | RGB Strip | 5V SK6812 RGB COB/FOB LED Strip Addressable | $7.18 | [Link](https://www.aliexpress.us/item/2255799861654620.html) | 🥀 144leds/m 0.5 black pcb ip67 waterproof | True | False |
 | 1 | RGB Enclosure | Black 1m Aluminum enclosure with diffuser | $20.00 | [Link](https://www.amazon.com/dp/B07KBYQ3JR) | | True | False |
 
-* **Open Source Tools:** [ArduPilot](https://ardupilot.org/), [Pegasus Simulator](https://pegasussimulator.github.io/PegasusSimulator/)
