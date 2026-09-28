@@ -36,7 +36,7 @@ A hybrid carbon-fiber drone combining manual FPV controls with Raspberry Pi 5 on
 
 ## How It Works
 
-To solve the issue where high motor current draws caused voltage sags and browned out the Raspberry Pi 5 during intense maneuvers, we completely separated the avionics and drive power rails. A primary 4S LiPo supplies the ESCs and 2820 1000kV motors, while a secondary 3S LiPo feeds an iFlight PD100W regulator to deliver a clean, continuous 5V/5A over USB-C to the companion computer.
+Has both a FPV and an Autonomous mode powered by different controllers. To solve the issue where high motor current draws caused voltage sags and browned out the Raspberry Pi 5 during intense maneuvers, we completely separated the avionics and drive power rails. A primary 4S LiPo supplies the ESCs and 2820 1000kV motors, while a secondary 3S LiPo feeds an iFlight PD100W regulator to deliver a clean, continuous 5V/5A over USB-C to the companion computer.
 
 ## Authors & Acknowledgements
 
