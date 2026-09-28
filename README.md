@@ -4,6 +4,8 @@ A hybrid carbon-fiber drone combining manual FPV controls with Raspberry Pi 5 on
 <img width="3000" height="2294" alt="circuit_image" src="https://github.com/user-attachments/assets/814ffa7c-f512-4c04-ae4e-5bf58a9150ad" />
 
 [https://app.cirkitdesigner.com/project/11a8d37d-fc97-4505-8930-f4c5d81e814d](https://app.cirkitdesigner.com/project/11a8d37d-fc97-4505-8930-f4c5d81e814d))
+<img width="2463" height="1316" alt="1 (1)" src="https://github.com/user-attachments/assets/9f4f4043-a559-46b1-b459-15c97b5c67fb" />
+
 
 ## Try It
 
