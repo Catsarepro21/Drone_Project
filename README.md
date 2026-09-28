@@ -1,40 +1,48 @@
 # Autonomous Vision + FPV Quad
 
-Building a carbon-fiber quad that does both: manual FPV flights and autonomous target following. We have a Pi 5 running onboard YOLO to track targets, and it sends position targets to a Cube Orange running ArduPilot. We also added the ability to control manually via FPV
+A hybrid carbon-fiber drone combining manual FPV controls with Raspberry Pi 5 onboard YOLO tracking and ArduPilot target following.
 
-BOM & weight calculations live here: https://docs.google.com/spreadsheets/d/1xU_NW1MB9JgXXCRr1vzQk_ZqJNn86JdCjggnNsJFE8U/edit?usp=sharing
-Wiring Diagram: https://app.cirkitdesigner.com/project/11a8d37d-fc97-4505-8930-f4c5d81e814d
+![Autonomous Vision + FPV Quad](https://app.cirkitdesigner.com/project/11a8d37d-fc97-4505-8930-f4c5d81e814d)
 
-### What does what
+## Try It
 
-- **Cube Orange+ (ArduPilot):** Handles the raw flight stabilization, motor mixing, and compass/GPS telemetry. It accepts velocity commands from the Pi over serial.
-- **Raspberry Pi 5 (8GB):** Captures CSI video, processes YOLO inference onboard, and pushes MAVLink setpoints over UART to TELEM2.
-- **Herelink v1.1:** Feeds twin HDMI streams (forward GoPro 6, downward SJCAM) back to the ground unit. Total overkill for this drone, but we already have it lying around so we're using it.
-- **Failsafe override:** Mapped a physical switch on the Herelink RC to instantly kick the flight controller from GUIDED mode back into POSHOLD or STABILIZE.
+* **Wiring Diagram:** [Cirkit Designer View](https://app.cirkitdesigner.com/project/11a8d37d-fc97-4505-8930-f4c5d81e814d)
+* **BOM & Weight Calc:** [Google Sheet Breakdown](https://docs.google.com/spreadsheets/d/1xU_NW1MB9JgXXCRr1vzQk_ZqJNn86JdCjggnNsJFE8U/edit?usp=sharing)
 
-### Power setup
+## Quick Start
 
-We had to split the battery rails completely because the motors will brown out the Pi during heavy throttle punches:
+1. Flash ArduPilot (Copter) onto the Cube Orange+ and calibrate the IMU/compass.
+2. Boot the Raspberry Pi 5 and clone the onboard vision repository:
+   ```bash
+   git clone https://github.com/your-username/drone-vision.git && cd drone-vision
+   ```
+3. Connect the Pi 5 to TELEM2 and run the autonomous tracking script:
+   ```bash
+   python3 main.py --port /dev/ttyAMA0 --baud 921600
+   ```
 
-1. **4S LiPo (Motors):** Feeds into the Cube Power Brick Mini, through the PDB, out to four 80A BLHeli_S ESCs running 2820 1000kV motors.
-2. **3S LiPo (Avionics):** Runs through an anti-spark switch into an XT60 hub. An iFlight PD100W drops this to a clean 5V/5A USB-C line for the Pi 5. A Matek BEC steps down to 12V for the Herelink air unit, while the auxiliary USB port powers the action cameras.
+## Features
 
-### Parts list
+* Real-time target tracking via onboard YOLO inference running on a Raspberry Pi 5 over CSI.
+* Automatic velocity and position command adjustments pushed to ArduPilot via MAVLink over serial (TELEM2).
+* Dual HD video feed transmission (front GoPro Hero 6 & downward SJCAM) through Herelink v1.1.
+* Dual power rail architecture designed to completely prevent Pi brownouts during heavy throttle spikes.
+* Physical RC transmitter failsafe override to instantly revert from `GUIDED` mode to `POSHOLD` or `STABILIZE`.
 
-- **Frame:** Carbon fiber quadcopter frame
-- **Flight Controller:** CubePilot Cube Orange+ (ArduPilot)
-- **Companion Board:** Raspberry Pi 5 (8GB)
-- **Drive:** 4x 2820 1000kV motors, 4x 80A BLHeli_S ESCs
-- **Batteries:** 4S LiPo for motors, 3S LiPo for avionics
-- **CV Cameras:** Sony IMX708 (front CSI-1), Arducam OV5647 fisheye (downward CSI-0)
-- **Pilot Cameras:** GoPro Hero 6 (front HDMI-1), SJCAM SJ4000 (downward HDMI-2)
-- **Sensors & Radio:** Holybro Micro M10 GPS/Mag, CubePilot Herelink Air Unit v1.1
+## Local Simulation
 
-### Simulation
+1. Install [NVIDIA Isaac Sim](https://developer.nvidia.com/isaac-sim) (Linux environment recommended).
+2. Follow the setup steps in the [Pegasus Simulator Installation Guide](https://pegasussimulator.github.io/PegasusSimulator/source/setup/installation.html).
+3. Run the simulation environment to test flight dynamics and CV tracking algorithms:
+   ```bash
+   python3 pegasus_sim.py --config quad_yolo.yaml
+   ```
 
-Running flight dynamics and vision tests inside NVIDIA Isaac Sim via Pegasus. Setup notes here: https://pegasussimulator.github.io/PegasusSimulator/source/setup/installation.html (Not well on windows).
+## How It Works
 
-### Authors
-- Rehan (https://stardance.hackclub.com/@rehanhabbu)
-- Sahlameer (https://stardance.hackclub.com/@Sahlameer)
-- Faahim (https://stardance.hackclub.com/@Faahim)
+To solve the issue where high motor current draws caused voltage sags and browned out the Raspberry Pi 5 during intense maneuvers, we completely separated the avionics and drive power rails. A primary 4S LiPo supplies the ESCs and 2820 1000kV motors, while a secondary 3S LiPo feeds an iFlight PD100W regulator to deliver a clean, continuous 5V/5A over USB-C to the companion computer.
+
+## Authors & Acknowledgements
+
+* **Authors:** [Rehan](https://stardance.hackclub.com/@rehanhabbu), [Sahlameer](https://stardance.hackclub.com/@Sahlameer), [Faahim](https://stardance.hackclub.com/@Faahim)
+* **Open Source Tools:** [ArduPilot](https://ardupilot.org/), [Pegasus Simulator](https://pegasussimulator.github.io/PegasusSimulator/)
